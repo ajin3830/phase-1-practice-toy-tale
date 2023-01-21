@@ -46,7 +46,7 @@ function renderToys(toys) {
     button.textContent = 'Like'
     // ^^^giving our buttons a name so the name appears on the button
 
-    // below is Patch
+    // below is PATCH
     button.addEventListener('click', () =>{
       
       p.textContent = parseInt(p.textContent) + 1
@@ -60,8 +60,6 @@ function renderToys(toys) {
           likes: parseInt(p.textContent)
         })
       })
-      .then(r => r.json())
-      .then(toyObj => renderToys([toyObj]))
 
     })
 
@@ -85,7 +83,7 @@ function addNewToy() {
 
     }
     // renderToys([newToy]) 
-    // ^^^commented out to make post request w pessimistic rendering
+    // ^^^commented out to make POST request w pessimistic rendering
     fetch('http://localhost:3000/toys', {
       method: 'POST',
       headers: {
